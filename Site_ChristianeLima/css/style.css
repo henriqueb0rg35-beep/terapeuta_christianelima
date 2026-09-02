@@ -93,3 +93,32 @@ nav a:hover {
 .foto-mural:hover {
     transform: scale(1.05); /* Mantém a consistência visual de "salto" da página inicial */
 }
+
+/* Layout da página de Agendamento */
+.layout-agendamento {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bloco-hibrido, .bloco-forms, .bloco-mapa {
+    margin-bottom: 50px;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: var(--cor-texto); /* Marrom Escuro */
+    color: var(--cor-fundo);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--cor-terracota);
+}
