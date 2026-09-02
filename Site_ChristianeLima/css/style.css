@@ -69,3 +69,27 @@ nav a:hover {
 .imagem-zoom:active {
     transform: scale(1.04); /* Amplia a imagem em 4% criando o 'salto' */
 }
+/* Estrutura da Grade Rígida e Responsiva */
+.grade-fotos {
+    display: grid;
+    /* auto-fit cria quantas colunas couberem. minmax garante que não fiquem menores que 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espaçamento padrão de fábrica entre os itens */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Comportamento das Imagens do Mural */
+.foto-mural {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Força o quadrado 🔲 perfeito em qualquer tela */
+    object-fit: cover; /* Garante que a imagem preencha o quadrado sem achatar ou distorcer */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(73, 49, 40, 0.15); /* Sombra usando a cor Marrom Escuro da sua paleta */
+    transition: transform 0.3s ease;
+}
+
+.foto-mural:hover {
+    transform: scale(1.05); /* Mantém a consistência visual de "salto" da página inicial */
+}
