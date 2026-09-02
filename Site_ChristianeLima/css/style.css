@@ -1,0 +1,31 @@
+:root {
+    --cor-fundo: #FAF3EC;
+    --cor-monograma: #B66F51;
+    --cor-texto: #493128;
+    --cor-terracota: #D09E83;
+    --cor-bronze: #C69A82;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+nav {
+    background-color: var(--cor-texto); /* Fundo escuro para destacar o menu */
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-terracota); /* Cor ao passar o mouse */
+}
