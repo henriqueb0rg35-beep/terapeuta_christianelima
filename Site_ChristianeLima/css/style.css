@@ -29,3 +29,43 @@ nav a {
 nav a:hover {
     color: var(--cor-terracota); /* Cor ao passar o mouse */
 }
+/* Layout Responsivo da Apresentação */
+.bloco-apresentacao {
+    display: flex;
+    flex-direction: column; /* Força o formato de blocos horizontais (texto em cima, imagem embaixo) */
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+    text-align: center;
+}
+
+.conteudo-texto h1 {
+    color: var(--cor-monograma);
+}
+
+.conteudo-texto h2 {
+    color: var(--cor-bronze);
+}
+
+/* Animação de Salto na Imagem */
+.conteudo-imagem {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px; /* Limita o tamanho máximo da foto */
+    border-radius: 15px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que o zoom não vaze as bordas */
+}
+
+.imagem-zoom {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Define o tempo e a suavidade da animação */
+}
+
+/* O efeito ocorre no mouse (hover) ou no toque de tela (active) */
+.imagem-zoom:hover, 
+.imagem-zoom:active {
+    transform: scale(1.04); /* Amplia a imagem em 4% criando o 'salto' */
+}
