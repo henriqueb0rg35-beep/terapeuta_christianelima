@@ -176,3 +176,118 @@ nav a:hover {
 .btn-submit:hover {
     background-color: var(--cor-texto);
 }
+
+/* Layout da Página de Planos (Pricing Cards) */
+.layout-planos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap; /* A mágica da responsividade que acabamos de discutir */
+    justify-content: center;
+    gap: 30px;
+    align-items: center; /* Centraliza verticalmente para lidar com o card em destaque */
+}
+
+.card-plano {
+    background-color: #ffffff;
+    border: 2px solid var(--cor-fundo);
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(73, 49, 40, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative; /* Necessário para posicionar a tag de recomendado */
+}
+
+.card-plano:hover {
+    border-color: var(--cor-terracota);
+}
+
+/* O Card Estratégico de Vendas */
+.card-plano.destaque {
+    border: 2px solid var(--cor-monograma);
+    box-shadow: 0 8px 20px rgba(182, 111, 81, 0.2);
+    transform: scale(1.05); /* Deixa este cartão 5% maior que os outros no desktop */
+    z-index: 1;
+}
+
+.tag-recomendado {
+    background-color: var(--cor-monograma);
+    color: var(--cor-fundo);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-plano h3 {
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--cor-monograma);
+    margin-bottom: 20px;
+}
+
+.preco span {
+    font-size: 16px;
+    color: #777;
+    font-weight: normal;
+}
+
+.beneficios {
+    list-style: none; /* Remove as bolinhas padrão */
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.beneficios li {
+    margin-bottom: 10px;
+    color: var(--cor-texto);
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Adiciona um checkmark (✔️) visual via CSS antes de cada item da lista */
+.beneficios li::before {
+    content: "✓";
+    color: var(--cor-terracota);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.btn-kiwify {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    padding: 15px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.card-plano.destaque .btn-kiwify {
+    background-color: var(--cor-monograma);
+}
+
+.btn-kiwify:hover {
+    background-color: var(--cor-bronze);
+}
