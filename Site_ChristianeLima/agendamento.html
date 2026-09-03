@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!-- (Mesmo <head> e <header> com <nav> das páginas anteriores) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Christiane Lima</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    <!-- HEADER AQUI -->
-        <header>
+    <header>
         <nav>
             <a href="index.html">Início</a>
             <a href="mural.html">Mural de Fotos</a>
@@ -13,7 +17,6 @@
     </header>
     
     <main class="layout-agendamento">
-        <link rel="stylesheet" href="css/style.css">
         
         <!-- 1. Introdução Híbrida e WhatsApp -->
         <section class="bloco-hibrido">
@@ -21,66 +24,62 @@
             <p>Escolha o que melhor se adapta à sua rotina: sessões <strong>Online</strong> no conforto do seu lar, ou <strong>Presenciais</strong> em nosso espaço físico acolhedor.</p>
             
             <p>Ficou com alguma dúvida antes de agendar?</p>
-            <!-- Substitua 5511999999999 pelo número real com código do país e DDD -->
             <a href="https://wa.me/5511999999999?text=Olá,%20tenho%20interesse%20nos%20atendimentos%20de%20Christiane%20Lima%20para%20terapia." target="_blank" class="btn-whatsapp">
                 Tirar dúvidas no WhatsApp
             </a>
         </section>
 
-        <!-- 2. Formulário do Google (Forms) -->
+        <!-- 2. Formulário Nativo (FormSubmit) -->
         <section class="bloco-forms">
             <h2 style="color: var(--cor-bronze);">Agende sua Sessão</h2>
-            <!-- FORMULÁRIO -->
+            
             <div class="form-box">
-                <!-- Alteração de Arquitetura: target="_blank" faz a submissão abrir em nova aba para não perder a página atual -->
                 <form action="https://formsubmit.co/henrique.b0rg35@gmail.com" method="POST" target="_blank">
                     
+                    <!-- Configurações Ocultas do Sistema -->
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nova Inscrição - Convite Terapia!">
+                    <input type="hidden" name="_subject" value="Nova Inscrição - Triagem Terapia">
+                    <input type="hidden" name="_next" value="https://seusite.vercel.app/agendamento.html">
 
+                    <!-- Campos de Coleta de Dados -->
                     <div class="form-group">
                         <label for="nome">Nome completo *</label>
-                        <input type="text" id="nome" name="Nome_Responsavel" class="form-input" required placeholder="Digite seu nome">
+                        <input type="text" id="nome" name="Nome" class="form-input" required placeholder="Digite seu nome completo">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-mail *</label>
+                        <label for="estado_civil">Estado civil *</label>
+                        <input type="text" id="estado_civil" name="Estado_Civil" class="form-input" required placeholder="Ex: Solteiro(a), Casado(a)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Contato telefone *</label>
+                        <!-- type="tel" aciona o teclado numérico no celular -->
+                        <input type="tel" id="telefone" name="Telefone" class="form-input" required placeholder="DDD + Número">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Contato email *</label>
                         <input type="email" id="email" name="Email" class="form-input" required placeholder="seuemail@exemplo.com">
                     </div>
 
-                    <div class="form-group" id="box-nome-acompanhante" style="display: none;">
-                        <label for="nome_acompanhante">Contato Telefone</label>
-                        <input type="text" id="nome_acompanhante" name="Nome_Acompanhante" class="form-input" placeholder="Digite seu telefone com DDD">
-                    </div>
-
                     <div class="form-group">
-                        <label for="nome_criancas">Contato email *</label>
-                        <input type="text" id="nome_criancas" name="Nome_Criancas" class="form-input" required placeholder="Informe seu email de contato">
+                        <label for="relato">Me conte, como você tem estado? *</label>
+                        <!-- Textarea permite múltiplas linhas de texto para o paciente desabafar -->
+                        <textarea id="relato" name="Relato_Paciente" class="form-input" required placeholder="Informe o que está ocorrendo para eu saber como te ajudar..." rows="4"></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label for="nome_criancas">Me conte, como você tem estado? *</label>
-                        <input type="text" id="nome_criancas" name="Nome_Criancas" class="form-input" required placeholder="Informe o que está ocorrendo para eu saber como te ajudar">
-                    </div>
-                    
-                    </div>
-
-                    <button type="submit" class="btn-submit">ENVIAR</button>
+                    <button type="submit" class="btn-submit">ENVIAR SOLICITAÇÃO</button>
                 </form>
             </div>
-            
-        </div> <!-- Fim da div 'content' -->
-            <!-- Colaremos o Iframe do Google Forms aqui -->
         </section>
 
         <!-- 3. Mapa (Google Maps) -->
         <section class="bloco-mapa">
             <h2 style="color: var(--cor-bronze);">Nossa Localização</h2>
-            <!-- Colaremos o Iframe do Google Maps aqui -->
-            <iframe src="https://share.google/WqhiiHgL0PrXddcjj" width="100%" height="400" style="border:0;" loading="lazy"></iframe>
+            <!-- Usando um link de Embed válido para não bloquear. Substitua pelo Embed real da clínica depois. -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197576926315!2d-46.6586018!3d-23.5613311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
         </section>
-
     </main>
 </body>
 </html>
-
