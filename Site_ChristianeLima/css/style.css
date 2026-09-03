@@ -291,3 +291,37 @@ nav a:hover {
 .btn-kiwify:hover {
     background-color: var(--cor-bronze);
 }
+/* TESTE RASTRO AZUL DE CURSOR */
+body.aura-active
+.giyu-bg {
+    opacity: 0.22;
+}
+#c {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+#hd {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    pointer-events: none;
+}
+.giyu-bg {
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: 1;
+    background-image:
+    url ("bg.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    pointer-events: none;
+    will-change: transform;
+    transition: opacity 0.3s;
+}
+/* FIM DA TRILHA AZUL DO CURSOS */
