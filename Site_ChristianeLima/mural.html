@@ -5,26 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mural de Fotos - Christiane Lima</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="mural.html">Mural de Fotos</a>
-            <a href="agendamento.html">Agendamento</a>
-            <a href="planos.html">Planos e Valores</a>
+        <nav class="site-nav" aria-label="Menu principal">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="menu-links" class="menu-links" hidden>
+                <a href="index.html">Início</a>
+                <a href="mural.html">Mural de Fotos</a>
+                <a href="agendamento.html">Agendamento</a>
+                <a href="planos.html">Planos e Valores</a>
+            </div>
         </nav>
     </header>
     <main>
         <h1 style="text-align: center; color: var(--cor-monograma);">Mural do Consultório</h1>
         
-        <section class="grade-fotos">
-            <!-- As imagens precisam estar na pasta assets -->
-            <img src="assets/foto1.jpg" alt="Ambiente do consultório" class="foto-mural">
-            <img src="assets/foto2.jpg" alt="Terapia de casal" class="foto-mural">
-            <img src="assets/foto3.jpg" alt="Detalhe decorativo" class="foto-mural">
-            <img src="assets/foto4.jpg" alt="Espaço de escuta" class="foto-mural">
+        <section class="carousel" aria-label="Fotos do consultório" aria-roledescription="carrossel">
+            <p>Arraste para os lados para navegar. Clique em uma foto para ampliar.</p>
+            <div class="carousel-track" tabindex="0" aria-label="Fotos; use as setas para navegar">
+                <button class="carousel-slide" type="button" aria-label="Ampliar foto: Ambiente do consultório">
+                    <img src="assets/foto1.jpg" alt="Ambiente do consultório" draggable="false">
+                </button>
+                <button class="carousel-slide" type="button" aria-label="Ampliar foto: Terapia de casal">
+                    <img src="assets/foto2.jpg" alt="Terapia de casal" draggable="false">
+                </button>
+                <button class="carousel-slide" type="button" aria-label="Ampliar foto: Detalhe decorativo">
+                    <img src="assets/foto3.jpg" alt="Detalhe decorativo" draggable="false">
+                </button>
+                <button class="carousel-slide" type="button" aria-label="Ampliar foto: Espaço de escuta">
+                    <img src="assets/foto4.jpg" alt="Espaço de escuta" draggable="false">
+                </button>
+            </div>
+            <div class="carousel-controls">
+                <button type="button" class="carousel-prev" aria-label="Foto anterior">❮</button>
+                <span class="carousel-status" aria-live="polite">1 de 4</span>
+                <button type="button" class="carousel-next" aria-label="Próxima foto">❯</button>
+            </div>
         </section>
+        <dialog class="photo-dialog" aria-label="Foto ampliada">
+            <button class="photo-close" type="button" aria-label="Fechar foto">×</button>
+            <img class="photo-expanded" alt="">
+        </dialog>
     </main>
 </body>
 </html>

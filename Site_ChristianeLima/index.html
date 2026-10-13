@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christiane Lima - Terapeuta Cristã</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="mural.html">Mural de Fotos</a>
-            <a href="agendamento.html">Agendamento</a>
-            <a href="planos.html">Planos e Valores</a>
+        <nav class="site-nav" aria-label="Menu principal">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="menu-links" class="menu-links" hidden>
+                <a href="index.html">Início</a>
+                <a href="mural.html">Mural de Fotos</a>
+                <a href="agendamento.html">Agendamento</a>
+                <a href="planos.html">Planos e Valores</a>
+            </div>
         </nav>
     </header>
 
@@ -25,7 +31,7 @@
                 <p>A terapia não é apenas para momentos de crise. Assim como cuidamos da saúde física, a manutenção terapêutica preventiva é fundamental para fortalecer os vínculos familiares enquanto as coisas estão bem, evitando que pequenos desgastes se tornem problemas maiores.</p>
                 <a href="planos.html" class="btn-whatsapp">Conhecer planos e valores</a>
             </div>
-            
+
             <div class="conteudo-imagem">
                 <!-- Substitua 'foto-chris.jpg' pelo nome real do arquivo salvo na pasta assets -->
                 <img src="assets/foto-chris.jpg" alt="Christiane Lima - Terapeuta Cristã" class="imagem-zoom">

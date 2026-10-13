@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento - Christiane Lima</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="mural.html">Mural de Fotos</a>
-            <a href="agendamento.html">Agendamento</a>
-            <a href="planos.html">Planos e Valores</a>
+        <nav class="site-nav" aria-label="Menu principal">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="menu-links" class="menu-links" hidden>
+                <a href="index.html">Início</a>
+                <a href="mural.html">Mural de Fotos</a>
+                <a href="agendamento.html">Agendamento</a>
+                <a href="planos.html">Planos e Valores</a>
+            </div>
         </nav>
     </header>
     
@@ -29,19 +35,13 @@
             </a>
         </section>
 
-        <!-- 2. Formulário Nativo (FormSubmit) -->
+        <!-- Solicitação pelo WhatsApp -->
         <section class="bloco-forms">
-            <h2 style="color: var(--cor-bronze);">Agende sua Sessão</h2>
+            <h2 style="color: var(--cor-bronze);">Agende sua sessão no WhatsApp</h2>
             
             <div class="form-box">
-                <form action="https://formsubmit.co/henrique.b0rg35@gmail.com" method="POST" target="_blank">
-                    
-                    <!-- Configurações Ocultas do Sistema -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nova Inscrição - Triagem Terapia">
-                    <input type="hidden" name="_next" value="https://seusite.vercel.app/agendamento.html">
-
-                    <!-- Campos de Coleta de Dados -->
+                <form id="agendamento-form">
+                    <!-- Dados para a mensagem no WhatsApp -->
                     <div class="form-group">
                         <label for="nome">Nome completo *</label>
                         <input type="text" id="nome" name="Nome" class="form-input" required placeholder="Digite seu nome completo">
@@ -69,6 +69,15 @@
                         <textarea id="relato" name="Relato_Paciente" class="form-input" required placeholder="Informe o que está ocorrendo para eu saber como te ajudar..." rows="4"></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="plano">Plano pretendido *</label>
+                        <select id="plano" name="Plano" class="form-input" required>
+                            <option value="">Selecione um plano</option>
+                            <option value="Sessão avulsa">Sessão avulsa — R$ 130,00</option>
+                            <option value="Processo Terapêutico">Processo Terapêutico — 8 sessões | R$ 897,00</option>
+                        </select>
+                    </div>
+                    <p>Ao continuar, o WhatsApp abrirá com seus dados. Confira a mensagem e envie para concluir a solicitação.</p>
                     <button type="submit" class="btn-submit">ENVIAR SOLICITAÇÃO</button>
                 </form>
             </div>

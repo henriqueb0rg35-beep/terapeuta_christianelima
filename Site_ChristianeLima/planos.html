@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planos e Valores - Christiane Lima</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="mural.html">Mural de Fotos</a>
-            <a href="agendamento.html">Agendamento</a>
-            <a href="planos.html" aria-current="page">Planos e Valores</a>
+        <nav class="site-nav" aria-label="Menu principal">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="menu-links" class="menu-links" hidden>
+                <a href="index.html">Início</a>
+                <a href="mural.html">Mural de Fotos</a>
+                <a href="agendamento.html">Agendamento</a>
+                <a href="planos.html">Planos e Valores</a>
+            </div>
         </nav>
     </header>
 
